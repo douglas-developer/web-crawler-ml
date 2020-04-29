@@ -10,17 +10,16 @@ class WebCrawlerService extends BaseService {
         this.model = Model;
     }
 
-    async index(search, limit = 10) {
+    async index(search, limit = 20) {
         let filter = search.replace(/[,|\s]+/g, "-").toLowerCase();
         try {
             let product = await this.model.find({ $text: {$search: `${filter}`}}).limit(limit);
-            console.log(product.length)
             if (product.length > 0) return product;
             let itens = await this.searchItens(search);
             await this.bulkUpsert(
                 itens,
                 r => ({
-                    link: r.link
+                    name: r.name
                 })
             );
             return await this.model.find({ $text: {$search: `${filter}`}}).limit(limit);
@@ -51,7 +50,7 @@ class WebCrawlerService extends BaseService {
                 let item = {
                     search: filter.replace(/[,|\s]+/g, "-").toLowerCase(),
                     imlID: $(this).find('div.rowItem').attr('id'),
-                    link: $(this).find('.item__info-title').attr('href'),
+                    link: $(this).find('.item__info-title').attr('href') || $(this).find('.images-viewer').attr('item-url'),
                     name: $(this).find('.list-view-item-title').text().trim(),
                     store: $(this).find('.item__brand-title-tos').text(),
                     price: $(this).find('div.item__price > span.price__fraction').text(),

@@ -22,7 +22,17 @@ Antes de executar o docker, renomeie o arquivo * .env.sample * para * .env *
 $ docker-compose up
 ```
 
-Quando o docker estiver pronto, vá para http://localhost:3002
+Quando o docker estiver pronto, 
+
+POST http://localhost:3002/product 
+
+Request:
+
+JSON
+{
+	"search" : "cadeado",
+	"limit": 20
+}
 
 ````
 
