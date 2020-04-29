@@ -1,0 +1,10 @@
+{
+    "_configFile": "test.json",
+    "server": {
+        "port": 3000
+    },
+    "database": {
+        "url": "mongodb://localhost:27017/starter-test"
+    },
+    "secret": "somerandomstringhere"
+}

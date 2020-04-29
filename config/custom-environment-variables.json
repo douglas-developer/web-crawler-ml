@@ -1,0 +1,11 @@
+{
+    "server": {
+        "port": "APP_PORT"
+    },
+    "database": {
+        "username": "DB_USER",
+        "password": "DB_PASSWORD",
+        "url": "DB_URL"
+    },
+    "secret": "somerandomstringhere"
+}

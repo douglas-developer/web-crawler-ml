@@ -1,0 +1,10 @@
+{
+    "_configFile": "development.json",
+    "server": {
+        "port": 3000
+    },
+    "database": {
+        "url": "mongodb://mongo:27017/starter-dev"
+    },
+    "secret": "somerandomstringhere"
+}
