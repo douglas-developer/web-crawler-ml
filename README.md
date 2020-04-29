@@ -2,7 +2,7 @@
 
 ## A princípio a arquitetura é um pouco diferente, apesar de preferir algo mais estruturado.
 
-## Eu não tive muito tempo para desenvolver mas dei o melhor.
+## Eu não tive muito tempo para desenvolver, mas dei o melhor.
 
 ## Primeiro preciso que você instale isso:
 #### Verifique se você tem a versão mais recente do docker em funcionamento
@@ -14,7 +14,6 @@
 
 ## docker-compose
 
-If for any reason you're still not able to run *docker-compose* 
 get it [here](https://docs.docker.com/compose/install/)
 
 Antes de executar o docker, renomeie o arquivo * .env.sample * para * .env *
